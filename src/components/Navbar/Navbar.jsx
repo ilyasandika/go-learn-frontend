@@ -11,10 +11,10 @@ const Navbar = () => {
                 <InputBox type="text" className="w-96" placeholder="Apa yang ingin anda pelajari hari ini?" />
 
                 <ul className="flex space-x-4">
-                    <NavItem text={"Home"}/>
-                    <NavItem text={"About"}/>
-                    <NavItem text={"Article"}/>
-                    <NavItem text={"Contact"}/>
+                    <NavItem text={"Home"} href="/"/>
+                    <NavItem text={"About"} href="/about"/>
+                    <NavItem text={"Article"} href="/article"/>
+                    <NavItem text={"Contact"} href="/contact"/>
                 </ul>
 
                 <div className="flex space-x-4">
