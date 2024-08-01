@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Quicksand', 'sans-serif'],
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        semibold: 600,
+        medium: 500,
+        bold: 700,
+      },
+    },
   },
   plugins: [],
 }
