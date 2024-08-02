@@ -1,9 +1,8 @@
-import Sidebar from "../components/sidebar/Sidebar.jsx";
 
 const Dashboard = () => {
     return (
         <>
-            <Sidebar/>
+            <p>Hi im dashboard</p>
         </>
     )
 }
