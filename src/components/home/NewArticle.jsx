@@ -10,8 +10,8 @@ const NewArticle = () => {
 
     return (
 
-        <div className="bg-gray-100 min-w-max my-10 mx-[-1000px] px-[1000px] ">
-            <div className="container-xl flex max-w-screen-xl flex-row w-full justify-between pr-28 py-6 gap-10 items-center my-8">
+        <div className="bg-gray-100 mt-8 py-4">
+            <div className="flex max-w-screen-lg mx-auto flex-row w-full justify-between py-6 gap-10 items-center">
                 <div className="w-4/12 text-left">
                     <h1 className="text-2xl font-semibold mb-2">Artikel terbaru kami</h1>
                     <p>Berkolaborasi dengan mitra kami, kami memberikan berbagai artikel menarik untuk mendukung
@@ -26,13 +26,13 @@ const NewArticle = () => {
                         {slides.map((slide, index) => (
                             <SwiperSlide key={index}>
                                 <div
-                                    className="flex flex-row gap-6 justify-between p-8 border w-full h-52 shadow-lg rounded bg-white overflow-hidden">
-                                    <img className="w-36 h-36 object-cover rounded" src={slide.src}
+                                    className="flex flex-row gap-6 items-center p-7 border w-full shadow-lg rounded bg-white">
+                                    <img className="w-32 h-32 object-cover rounded" src={slide.src}
                                          alt={slide.alt}/>
-                                    <div className="w-2/3 text-left h-/4">
+                                    <div className="text-left">
                                         <p className="text-sm">Oleh Si Abdul</p>
-                                        <h2 className="text-xl font-bold">Golang Backend Developer</h2>
-                                        <p className="line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        <h2 className="text-lg font-bold">Golang Backend Developer</h2>
+                                        <p className="text-sm line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipisicing
                                             elit. Corporis eos exercitationem facilis iste libero magnam numquam
                                             perspiciatis temporibus vero</p>
                                     </div>
