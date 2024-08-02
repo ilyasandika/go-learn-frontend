@@ -1,38 +1,16 @@
 import './App.css'
-import Navbar from './components/navbar/Navbar.jsx'
-import Footer from "./components/footer/footer.jsx";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+import Home from "./pages/Home.jsx";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-        <Navbar/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <Footer/>
-    </div>
+    <>
+        <Home/>
+    </>
   )
 }
 
