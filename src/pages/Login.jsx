@@ -17,7 +17,7 @@ const Login = () => {
                 <InputWithLabel className="w-full mb-4" id="password" name="password" label="Password"
                                 placeholder="Masukkan password anda"/>
                 <Button text="Masuk" onClick={() => {
-                    NavigateTo(navigate, "/dashboard")
+                    NavigateTo(navigate, "/learn/dashboard")
                 }} className="mt-1 w-full bg-slate-800 text-white hover:bg-white hover:text-slate-800"/>
                 <div className="my-6 flex items-center justify-center">
                     <div className="flex-grow border-t border-gray-400"></div>
@@ -25,7 +25,7 @@ const Login = () => {
                     <div className="flex-grow border-t border-gray-400"></div>
                 </div>
                 <Button text="Daftar" onClick={() => {
-                    NavigateTo(navigate, "/lear/dashboard")
+                    NavigateTo(navigate, "/register")
                 }} className="mt-1 w-full bg-white :text-slate-800 hover:bg-slate-800 hover:text-white "/>
                 <p className="text-xs text-center mt-3">Dengan melanjutkan, Anda menyetujui penggunaan data sesuai
                     dengan [Kebijakan Privasi] dan [Syarat & Ketentuan] yang berlaku.

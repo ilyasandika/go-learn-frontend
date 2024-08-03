@@ -16,9 +16,9 @@ function Learn() {
     return (
     <div className="flex flex-row">
         <Sidebar  isOpen={isOpen}/>
-        <div className={`w-full flex flex-col justify-between h-screen`}>
+        <div className={`w-full flex flex-col justify-between h-full`}>
             <Header isOpen={isOpen} onClick={toggleSidebar}/>
-            <div className="bg-gray-100 h-full">
+            <div className="bg-slate-100 h-full p-10 rounded-xl">
                 <Routes>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="articles" element={<Articles/>}/>
