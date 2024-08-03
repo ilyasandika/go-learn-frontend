@@ -18,13 +18,14 @@ function Learn() {
         <Sidebar  isOpen={isOpen}/>
         <div className={`w-full flex flex-col justify-between h-full`}>
             <Header isOpen={isOpen} onClick={toggleSidebar}/>
-            <div className="bg-slate-100 h-full p-10 rounded-xl">
+            <div className="bg-slate-100 h-full p-10 rounded-t-xl">
                 <Routes>
+                    <Route path="/" element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="articles" element={<Articles/>}/>
                 </Routes>
             </div>
-            <InnerFooter/>
+            <InnerFooter />
         </div>
     </div>
   )

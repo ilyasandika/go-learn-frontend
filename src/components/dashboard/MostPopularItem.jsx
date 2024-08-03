@@ -5,7 +5,7 @@ const MostPopularItem = (props) => {
     return (
         <div className="flex flex-row items-center gap-8 w-full justify-between border-b py-4">
             <div>
-                <p className="text-sm font-bold">{props.articleTitle}r</p>
+                <p className="text-sm font-bold">{props.articleTitle}</p>
                 <p className="text-sm">{props.articleDate}</p>
             </div>
             <div>

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-const ArticleCard = (props) => {
+const InfoCard = (props) => {
     return (
         <div className="flex-1 inline-block dashboard bg-white p-8 rounded-xl">
             <div className="flex flex-row items-center gap-8">
@@ -17,4 +17,4 @@ const ArticleCard = (props) => {
     );
 };
 
-export default ArticleCard;
+export default InfoCard;
