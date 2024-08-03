@@ -5,6 +5,11 @@ import Sidebar from "../components/sidebar/Sidebar.jsx";
 import Header from "../components/header/Header.jsx";
 import {useState} from "react";
 import InnerFooter from "../components/footer/InnerFooter.jsx";
+import MyArticles from "./MyArticles.jsx";
+import MyProfiles from "./MyProfiles.jsx";
+import AccountSettings from "./AccountSettings.jsx";
+import EditProfile from "./EditProfile.jsx";
+import AddArticle from "./AddArticle.jsx";
 
 function Learn() {
     const [isOpen, setIsOpen] = useState(true);
@@ -14,8 +19,11 @@ function Learn() {
     };
 
     return (
-    <div className="flex flex-row">
-        <Sidebar  isOpen={isOpen}/>
+    <div className="flex flex-row bg-slate-100">
+        <div className="sicky">
+        <Sidebar isOpen={isOpen}/>
+
+        </div>
         <div className={`w-full flex flex-col justify-between h-full`}>
             <Header isOpen={isOpen} onClick={toggleSidebar}/>
             <div className="bg-slate-100 h-full p-10 rounded-t-xl">
@@ -23,6 +31,11 @@ function Learn() {
                     <Route path="/" element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="articles" element={<Articles/>}/>
+                    <Route path="my-articles" element={<MyArticles/>}/>
+                    <Route path="profiles" element={<MyProfiles/>}/>
+                    <Route path="account-settings" element={<AccountSettings/>}/>
+                    <Route path="profiles/edit" element={<EditProfile/>}/>
+                    <Route path="my-articles/add" element={<AddArticle/>}/>
                 </Routes>
             </div>
             <InnerFooter />

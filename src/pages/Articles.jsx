@@ -3,6 +3,7 @@ import ArticleCard from "../components/card/articleCard.jsx";
 
 const Articles = () => {
     return (
+
         <div className="flex flex-col">
             <h1 className="text-2xl font-bold mb-4">Articles</h1>
             <div className="flex flex-wrap gap-4 justify-between">

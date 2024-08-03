@@ -11,7 +11,7 @@ const Sidebar = (props) => {
 
     return (
         <>
-            <div className={`w-80 h-screen bg-white px-8 py-8 ${props.isOpen ? '' : 'hidden'}`}>
+            <div className={`sticky top-0 w-64 h-screen bg-white px-8 py-8 ${props.isOpen ? '' : 'hidden'}`}>
                 <div className="flex justify-between items-center">
                     <img src="/main-logo.svg" className={`w-36 mx-auto`} alt="img" />
                 </div>

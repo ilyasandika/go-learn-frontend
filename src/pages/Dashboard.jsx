@@ -1,7 +1,7 @@
 import {faCopy, faFile, faFileArchive} from "@fortawesome/free-solid-svg-icons";
 import InfoCard from "../components/card/InfoCard.jsx";
-import LatestCommentItem from "../components/dashboard/LatestCommentItem.jsx";
-import MostPopularItem from "../components/dashboard/MostPopularItem.jsx";
+import LatestCommentItem from "../components/table/LatestCommentItem.jsx";
+import MostPopularItem from "../components/table/MostPopularItem.jsx";
 
 const Dashboard = () => {
     return (

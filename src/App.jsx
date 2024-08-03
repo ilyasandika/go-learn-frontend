@@ -8,6 +8,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import {Route, Routes} from "react-router-dom";
 import Learn from "./pages/Learn.jsx";
+import 'react-quill/dist/quill.snow.css';
 
 function App() {
   return (
