@@ -4,7 +4,7 @@ const InputWithLabel = (props) => {
     return (
         <>
             <label className="font-semibold block mb-2">{props.label}</label>
-            <InputBox type={props.type} className={props.className}  id={props.id} name={props.name} placeholder={props.placeholder}/>
+            <InputBox type={props.type} className={props.className} onChange={props.onChange} id={props.id} name={props.name} placeholder={props.placeholder}/>
         </>
     )
 
