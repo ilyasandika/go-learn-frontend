@@ -1,6 +1,6 @@
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEdit, faEye, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faEdit, faEye, faPaperPlane, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 const LatestCommentItem = (props) => {
     return (
@@ -20,9 +20,10 @@ const LatestCommentItem = (props) => {
 
 
             <td className=" border-b border-slate-400 py-6 space-x-4">
-                <FontAwesomeIcon icon={faEye} className="hover:cursor-pointer fa-fw text-cyan-500 text-lg"/>
-                <FontAwesomeIcon icon={faTrash} className="hover:cursor-pointer fa-fw text-red-500 text-lg"/>
-                {props.isEditable ? <FontAwesomeIcon icon={faEdit} className="hover:cursor-pointer fa-fw text-slate-500 text-lg"/> : ""}
+                {<FontAwesomeIcon icon={faEye} onClick={props.detailClick} className="hover:cursor-pointer fa-fw text-cyan-500 text-lg"/>}
+                {props.isDeletable && <FontAwesomeIcon icon={faTrash}  onClick={props.deleteClick} className="hover:cursor-pointer fa-fw text-red-500 text-lg"/>}
+                {props.isPublishable && <FontAwesomeIcon icon={faPaperPlane} onClick={props.publishClick} className="hover:cursor-pointer fa-fw text-emerald-500 text-lg"/>}
+                {props.isEditable && <FontAwesomeIcon icon={faEdit} onClick={props.editClick} className="hover:cursor-pointer fa-fw text-slate-500 text-lg"/>}
             </td>
         </tr>
     )

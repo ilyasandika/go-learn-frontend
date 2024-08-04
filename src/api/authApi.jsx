@@ -1,4 +1,6 @@
 import axios from 'axios';
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -28,3 +30,15 @@ export const loginUser = async (userData) => {
         throw error.response.data;
     }
 };
+
+export const logout = async () => {
+    try {
+       return await axios.post(`${API_BASE_URL}/auth/logout`,"",{
+           withCredentials: true
+       })
+    } catch (error) {
+        throw error.response;
+    }
+};
+
+

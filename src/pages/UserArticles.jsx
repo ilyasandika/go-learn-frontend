@@ -1,35 +1,54 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GetUserPublishedArticleByUser, GetUserUnpublishedArticleByUser } from "../api/articleApi.jsx";
+import {
+    GetUserPublishedArticle,
+    GetUserPublishedArticleByUser, GetUserUnpublishedArticle,
+    GetUserUnpublishedArticleByUser, PublishArticle, UnpublishArticle
+} from "../api/articleApi.jsx";
 import ArticleItem from "../components/table/ArticleItem.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherAlt } from "@fortawesome/free-solid-svg-icons";
 
-const MyArticles = () => {
+const UserArticle = () => {
     const navigate = useNavigate();
     const [publishedArticles, setPublishedArticles] = useState([]);
     const [unpublishedArticles, setUnpublishedArticles] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const fetchArticles = async () => {
+        try {
+            const published = await GetUserPublishedArticle();
+            const unpublished = await GetUserUnpublishedArticle();
+            setPublishedArticles(published);
+            setUnpublishedArticles(unpublished);
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const published = await GetUserPublishedArticleByUser();
-                const unpublished = await GetUserUnpublishedArticleByUser();
-                setPublishedArticles(published);
-                setUnpublishedArticles(unpublished);
-            } catch (error) {
-               console.log(error)
-            } finally {
-                setLoading(false);
-            }
-        };
-
         fetchArticles();
     }, []);
 
+    const PublishHandling = async (id) => {
+        try {
+            await PublishArticle(id)
+            await fetchArticles()
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
+    const UnpublishHandling = async (id) => {
+        try {
+            await UnpublishArticle(id)
+            await fetchArticles()
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     if (loading) return <div>Loading...</div>;
 
@@ -58,9 +77,12 @@ const MyArticles = () => {
                             <ArticleItem
                                 key={article.id}
                                 src="/Default_pfp.svg"
+                                user={article.author}
                                 articleDate={article.created_at}
                                 articleTitle={article.title}
+                                publishClick={()=>{UnpublishHandling(article.id)}}
                                 detailClick={()=>{navigate("/learn/articles/" + article.id)}}
+                                isPublishable={true}
                             />
                         )) : <td className="col-span-4 text-center py-4" colSpan={4}>Data tidak ditemukan</td>}
                         </tbody>
@@ -72,12 +94,7 @@ const MyArticles = () => {
             <div className="w-full bg-white p-10 rounded-xl">
                 <div className="flex flex-row justify-between items-center w-full p-4 bg-slate-50 rounded-xl">
                     <h2 className="text-lg font-bold">UNPUBLISHED ARTICLES</h2>
-                    <div
-                        onClick={() => navigate("add")}
-                        className="flex flex-row gap-3 items-center text-white hover:cursor-pointer bg-slate-800 p-3 rounded-xl">
-                        <FontAwesomeIcon icon={faFeatherAlt} />
-                        <span className="font-bold text-sm text-white">Write an article</span>
-                    </div>
+
                 </div>
                 <div className="p-4">
                     <table className="table-auto border-collapse w-full p-2">
@@ -97,14 +114,11 @@ const MyArticles = () => {
                                 user={article.author}
                                 articleDate={article.created_at}
                                 articleTitle={article.title}
+                                publishClick={()=>{PublishHandling(article.id)}}
                                 detailClick={()=>{navigate("/learn/articles/" + article.id)}}
-                                editClick={0}
-                                deleteClick={0}
-                                // isEditable={true}
-                                // isDeletable={true}
+                                isPublishable={true}
                             />
                         )) : <td className="col-span-4 text-center py-4" colSpan={4}>Data tidak ditemukan</td>}
-
                         </tbody>
                     </table>
                 </div>
@@ -113,4 +127,4 @@ const MyArticles = () => {
     );
 }
 
-export default MyArticles;
+export default UserArticle;

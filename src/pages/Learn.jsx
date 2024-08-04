@@ -10,6 +10,10 @@ import MyProfiles from "./MyProfiles.jsx";
 import AccountSettings from "./AccountSettings.jsx";
 import EditProfile from "./EditProfile.jsx";
 import AddArticle from "./AddArticle.jsx";
+import {AdminOnly, AuthRequired} from "../api/middleware.jsx";
+import UserArticles from "./UserArticles.jsx";
+import ArticleDetail from "./ArticleDetail.jsx";
+
 
 function Learn() {
     const [isOpen, setIsOpen] = useState(true);
@@ -31,7 +35,9 @@ function Learn() {
                     <Route path="/" element={<Dashboard/>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="articles" element={<Articles/>}/>
+                    <Route path="articles/:articleId" element={<ArticleDetail/>}/>
                     <Route path="my-articles" element={<MyArticles/>}/>
+                    <Route path="user-articles" element={<UserArticles/>}/>
                     <Route path="profiles" element={<MyProfiles/>}/>
                     <Route path="account-settings" element={<AccountSettings/>}/>
                     <Route path="profiles/edit" element={<EditProfile/>}/>
